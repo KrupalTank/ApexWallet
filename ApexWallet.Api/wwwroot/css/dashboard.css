@@ -1,0 +1,113 @@
+﻿body {
+    background-color: #F8F9FA; /* Pure bright canvas background */
+    color: #212529;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Formal Navigation Bar Branding */
+.bg-navy-darker {
+    background-color: #0A192F !important; /* Keep navbar clean dark blue for accent contrast */
+}
+
+.navbar .text-light {
+    color: #FFFFFF !important;
+}
+
+.border-navy {
+    border-color: #CED4DA !important;
+}
+
+.card-navy {
+    background-color: #FFFFFF; /* Clean white card layout */
+    border: 1px solid #DEE2E6; /* Distinct gray print borders */
+    border-radius: 10px;
+}
+
+    .card-navy h5, .card-navy h6 {
+        color: #0A192F !important; /* Crisp dark blue text headers */
+        font-weight: 600;
+    }
+
+.form-label {
+    color: #495057 !important;
+    font-weight: 500;
+}
+
+.text-muted {
+    color: #495057 !important; /* Darkened significantly for Xerox readability */
+}
+
+.text-cyan {
+    color: #0077B6 !important; /* Swapped to strong solid blue text */
+}
+
+.btn-cyan {
+    background-color: #0077B6;
+    color: #FFFFFF !important;
+    border: none;
+    transition: all 0.2s ease-in-out;
+}
+
+    .btn-cyan:hover {
+        background-color: #0096C7;
+        color: #FFFFFF !important;
+    }
+
+.form-control {
+    background-color: #FFFFFF;
+    border: 1px solid #CED4DA;
+    color: #212529 !important;
+}
+
+    .form-control::placeholder {
+        color: #ADB5BD !important;
+    }
+
+    .form-control[readonly] {
+        opacity: 0.8;
+        background-color: #E9ECEF;
+        color: #495057 !important;
+    }
+
+/* Hardened Table Customization for Paper Submission */
+.table {
+    color: #212529 !important; /* Sharp pure dark cell text */
+}
+
+    .table thead th {
+        color: #0A192F !important; /* Bold distinct dark header text */
+        border-bottom: 2px solid #CED4DA !important;
+        font-weight: 600;
+        font-size: 0.85rem;
+        background-color: #E9ECEF !important; /* Soft gray header row background */
+    }
+
+    .table tbody td {
+        border-bottom: 1px solid #DEE2E6 !important;
+        vertical-align: middle;
+        background-color: #FFFFFF !important;
+    }
+
+/* Fuzzy Search Dropdown */
+.dropdown-search {
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #0077B6;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+    .dropdown-search .list-group-item {
+        background-color: #FFFFFF;
+        color: #212529;
+        border: none;
+        border-bottom: 1px solid #DEE2E6;
+        cursor: pointer;
+    }
+
+        .dropdown-search .list-group-item:hover {
+            background-color: #E9ECEF;
+            color: #0077B6;
+        }

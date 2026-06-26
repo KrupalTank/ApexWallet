@@ -1,0 +1,73 @@
+﻿body {
+    background-color: #F8F9FA; /* Bright, clean light grey canvas */
+    color: #212529; /* Dark charcoal body text */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.auth-card {
+    background-color: #FFFFFF; /* Crisp white card base */
+    border: 1px solid #DEE2E6; /* Visible light grey boundaries */
+    border-radius: 12px;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08); /* Soft shadow for print depth */
+}
+
+    .auth-card h3 {
+        color: #0A192F !important; /* Rich deep navy heading */
+        font-weight: 600;
+    }
+
+.form-label {
+    color: #495057 !important; /* Strong contrast dark grey labels */
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.text-muted {
+    color: #6C757D !important; /* Clear grey text for secondary explanations */
+}
+
+.btn-apex {
+    background-color: #0077B6; /* Strong corporate blue accent */
+    color: #FFFFFF;
+    font-weight: 600;
+    border: none;
+    transition: all 0.2s ease-in-out;
+}
+
+    .btn-apex:hover {
+        background-color: #0096C7;
+        color: #FFFFFF;
+    }
+
+.toggle-link {
+    color: #0077B6;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+    .toggle-link:hover {
+        text-decoration: underline;
+        color: #0096C7;
+    }
+
+/* Input fields optimized for black & white printing */
+.form-control {
+    background-color: #FFFFFF;
+    border: 1px solid #CED4DA;
+    color: #212529 !important;
+}
+
+    .form-control::placeholder {
+        color: #ADB5BD !important; /* Visible placeholder gray */
+    }
+
+    .form-control:focus {
+        background-color: #FFFFFF;
+        border-color: #0077B6;
+        color: #212529;
+        box-shadow: 0 0 0 0.25rem rgba(0, 119, 182, 0.15);
+    }

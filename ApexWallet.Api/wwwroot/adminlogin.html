@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApexWallet - Admin Governance Authentication</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/auth.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card auth-card p-4">
+                    <div class="text-center mb-4">
+                        <h3 class="fw-bold">🛡️ Admin Console Login</h3>
+                        <p class="text-muted small">Authorized System Administrators Only</p>
+                    </div>
+
+                    <div id="loginAlert" class="alert alert-danger d-none small p-2" role="alert"></div>
+
+                    <form id="frmAdminLogin">
+                        <div class="mb-3">
+                            <label class="form-label">Admin Email</label>
+                            <input type="email" id="txtAdminEmail" class="form-control" placeholder="admin@gmail.com" required>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label">Security Key</label>
+                            <input type="password" id="txtAdminPassword" class="form-control" placeholder="••••••••" required>
+                        </div>
+                        <button type="submit" id="btnSubmit" class="btn btn-apex w-100 py-2">Initialize Secure Console</button>
+                    </form>
+
+                    <div class="text-center mt-3">
+                        <a href="index.html" class="toggle-link small">← Return to Public User Portal</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("frmAdminLogin").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const email = document.getElementById("txtAdminEmail").value.trim();
+            const password = document.getElementById("txtAdminPassword").value;
+            const alertBox = document.getElementById("loginAlert");
+
+            alertBox.classList.add("d-none");
+
+            // Hardcoded strict verification checks for your evaluation showcase
+            if (email === "admin@gmail.com" && password === "Admin@123") {
+                // Set an Admin specific claim token validation flag
+                sessionStorage.setItem("isAdminAuthenticated", "true");
+                window.location.href = "admin.html";
+            } else {
+                alertBox.innerText = "Access Denied: Invalid Administrative Credentials.";
+                alertBox.classList.remove("d-none");
+            }
+        });
+    </script>
+</body>
+</html>
