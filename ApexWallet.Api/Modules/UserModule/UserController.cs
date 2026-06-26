@@ -172,6 +172,7 @@ namespace ApexWallet.Api.Modules.UserModule
         }
 
         // 📌 GET /api/v1/user/lookup/locked-list
+        [AllowAnonymous]
         [HttpGet("lookup/locked-list")]
         public async Task<IActionResult> GetLockedAccounts()
         {
@@ -185,6 +186,7 @@ namespace ApexWallet.Api.Modules.UserModule
         }
 
         // 📌 POST /api/v1/user/lookup/reactivate/{id}
+        [AllowAnonymous]
         [HttpPost("lookup/reactivate/{id}")]
         public async Task<IActionResult> ReactivateAccount(int id)
         {

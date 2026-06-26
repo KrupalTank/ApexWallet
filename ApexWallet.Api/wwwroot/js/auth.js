@@ -1,4 +1,7 @@
-﻿const API_BASE_URL = "https://localhost:7284/api/v1";
+﻿// 📌 FIXED: Dynamic URL detection. Uses Render when live, localhost when offline!
+const API_BASE_URL = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
+    ? "https://localhost:7284/api/v1"                 // Local .NET 10 core development engine
+    : "https://apexwallet.onrender.com/api/v1";       // Live production instance endpoint
 
 function toggleAuth(showRegister) {
     if (showRegister) {
@@ -71,9 +74,8 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
 
         if (response.ok) {
             sessionStorage.setItem("authToken", data.token);
-            // 📌 Route directly onto dashboard panels now!
             window.location.href = "dashboard.html";
-            
+
         } else {
             alertBox.innerText = data.message || "Invalid email or password.";
             alertBox.classList.remove('d-none');

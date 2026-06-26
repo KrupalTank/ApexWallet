@@ -13,8 +13,11 @@ namespace ApexWallet.Api.Security
 
         public AesCryptoService(IConfiguration configuration)
         {
-            var keyString = configuration["CryptoSettings:Key"] ?? throw new ArgumentNullException("Crypto Key is missing.");
-            var ivString = configuration["CryptoSettings:IV"] ?? throw new ArgumentNullException("Crypto IV is missing.");
+            // 📌 FIXED: Drill down cleanly into the section block to support .env overriding natively
+            var cryptoSettings = configuration.GetSection("CryptoSettings");
+
+            var keyString = cryptoSettings["Key"] ?? throw new ArgumentNullException("Crypto Settings Key path resolution fault.");
+            var ivString = cryptoSettings["IV"] ?? throw new ArgumentNullException("Crypto Settings IV path resolution fault.");
 
             _key = Encoding.UTF8.GetBytes(keyString); // Must be exactly 32 bytes for AES-256
             _iv = Encoding.UTF8.GetBytes(ivString);   // Must be exactly 16 bytes for AES block size

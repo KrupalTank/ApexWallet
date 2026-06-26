@@ -57,10 +57,11 @@
 
         // ... (Rest of your existing admin.html code for loading locked accounts stays exactly beneath this)
 
-        const API_BASE_URL = "https://localhost:7284/api/v1";
-        const token = sessionStorage.getItem("authToken");
-        const secureHeaders = { "Authorization": `Bearer ${token}`, "Content-Type": "application/json" };
-
+        // 📌 Add this to the script tag inside admin.html to fix admin routing
+        const API_BASE_URL = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
+            ? "https://localhost:7284/api/v1"
+            : "https://apexwallet.onrender.com/api/v1";        const token = sessionStorage.getItem("authToken");
+        const secureHeaders = { "Content-Type": "application/json" };
         document.addEventListener("DOMContentLoaded", loadLockedAccounts);
 
         // 1. Fetch all accounts from database matching custom filter queries
